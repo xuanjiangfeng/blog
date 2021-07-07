@@ -23,3 +23,4 @@ Route::get('/chunk/exist', 'Index\ChunkController@exist');
 
 // 模型路由
 Route::get('/get_user_phone','Index\OneToOneController@getUserPhone');
+Route::get('/get_user_info_by_phone','Index\OneToOneController@getUserInfoByPhone');

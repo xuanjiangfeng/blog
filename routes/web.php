@@ -24,3 +24,8 @@ Route::get('/chunk/exist', 'Index\ChunkController@exist');
 // 模型路由
 Route::get('/get_user_phone','Index\OneToOneController@getUserPhone');
 Route::get('/get_user_info_by_phone','Index\OneToOneController@getUserInfoByPhone');
+
+
+Route::get('/get_posts_from_country', 'Index\HasManyThroughController@getPostsFromCountry');
+
+Route::get('/get_image_by_post', 'Index\PolymorphicController@getImageByPost');

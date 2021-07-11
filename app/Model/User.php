@@ -26,4 +26,12 @@ class User extends Model
         // 获取用户属性信息
         return $this->hasOne(UserProfile::class,'user_id','id');
     }
+
+    /**
+     * 获得此用户的图像。
+     */
+    public function image()
+    {
+        return $this->morphOne('App\Model\Image', 'imageable');
+    }
 }

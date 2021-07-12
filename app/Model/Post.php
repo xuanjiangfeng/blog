@@ -17,6 +17,17 @@ class Post extends Model
     protected $primaryKey = 'post_id';
 
     /**
+     *  一对多 关联
+     * 一个博客下有多个评论
+     * 第一个参数 所关联的表
+     * 第二个参数 子表的外键
+     * 第三个参数 父表的主键
+     */
+    public function comment(){
+        return $this->hasMany('App\Model\Comment', 'comment_post_id', 'post_id');
+    }
+
+    /**
      * 获得此文章的图像。
      */
     public function image()

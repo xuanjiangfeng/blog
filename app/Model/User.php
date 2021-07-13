@@ -34,4 +34,17 @@ class User extends Model
     {
         return $this->morphOne('App\Model\Image', 'imageable');
     }
+
+    /**
+     * 用户的角色
+     * 多对多 关联
+     * 第一个参数 关联的模型
+     * 第二个参数 连接表的表名
+     * 第三个参数 本模型在连接表中的外键
+     * 第四个参数 关联模型在连接表中的外键
+     */
+    public function role()
+    {
+        return $this->belongsToMany('App\Model\Role', 'role_user', 'role_user_user_id', 'role_user_role_id');
+    }
 }

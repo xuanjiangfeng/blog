@@ -29,3 +29,6 @@ Route::get('/get_user_info_by_phone','Index\OneToOneController@getUserInfoByPhon
 Route::get('/get_posts_from_country', 'Index\HasManyThroughController@getPostsFromCountry');
 
 Route::get('/get_image_by_post', 'Index\PolymorphicController@getImageByPost');
+
+Route::get('/get_user_role', 'Index\ManyToManyController@getUserRole');
+Route::get('/get_user_by_role', 'Index\ManyToManyController@getUserByRole');

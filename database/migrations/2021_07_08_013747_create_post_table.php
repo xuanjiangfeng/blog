@@ -17,7 +17,7 @@ class CreatePostTable extends Migration
             $table->increments('post_id');
             $table->string('post_title')->comment("标题");
             $table->text('post_content')->comment("内容");
-            $table->integer('post_author_id')->comment("作者id");
+            $table->integer('post_user_id')->comment("作者id");
             $table->timestamps();
         });
     }

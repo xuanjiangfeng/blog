@@ -25,6 +25,8 @@ Route::get('/chunk/exist', 'Index\ChunkController@exist');
 Route::get('/get_user_phone','Index\OneToOneController@getUserPhone');
 Route::get('/get_user_info_by_phone','Index\OneToOneController@getUserInfoByPhone');
 
+Route::get('/get_post_many_comment','Index\OneToManyController@getPostManyComment');
+Route::get('/get_post_info_by_comment', 'Index\OneToManyController@getPostInfoByComment');
 
 Route::get('/get_posts_from_country', 'Index\HasManyThroughController@getPostsFromCountry');
 

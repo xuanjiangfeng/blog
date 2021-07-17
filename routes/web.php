@@ -34,3 +34,7 @@ Route::get('/get_image_by_post', 'Index\PolymorphicController@getImageByPost');
 
 Route::get('/get_user_role', 'Index\ManyToManyController@getUserRole');
 Route::get('/get_user_by_role', 'Index\ManyToManyController@getUserByRole');
+
+Route::get('/get_all_commentpv_by_post', 'Index\PolymorphicController@getAllCommentPvByPost');
+
+Route::get('/get_all_tag_by_post', 'Index\PolymorphicController@getAllTagByPost');

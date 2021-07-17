@@ -35,4 +35,20 @@ class Post extends Model
         return $this->morphOne('App\Model\Image', 'imageable');
     }
 
+    /**
+     * 获得此文章的所有评论。一对多 多态
+     */
+    public function commentpv()
+    {
+        return $this->morphMany('App\Model\Commentpv', 'comment_pv_commentable');
+    }
+
+    /**
+     * 获取文章标签 多对多 多态
+     */
+    public function tag()
+    {
+        return $this->morphToMany('App\Model\Tag', 'taggable');
+    }
+
 }

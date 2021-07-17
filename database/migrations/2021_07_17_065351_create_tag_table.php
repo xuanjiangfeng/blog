@@ -5,7 +5,7 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Support\Facades\DB;
 
-class CreateImageTable extends Migration
+class CreateTagTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,17 +14,15 @@ class CreateImageTable extends Migration
      */
     public function up()
     {
-        Schema::create('image', function (Blueprint $table) {
-            $table->increments('image_id');
-            $table->text('image_body')->commit('内容');
-            $table->integer('imageable_id')->commit('id');
-            $table->string('imageable_type')->commit('哪个模型');
+        Schema::create('tag', function (Blueprint $table) {
+            $table->increments('tag_id');
+            $table->string('tag_name')->comment('标签名称');
             $table->timestamps();
-
         });
 
+
         // 表注释
-        DB::statement("ALTER TABLE image comment '图形表'");
+        DB::statement("ALTER TABLE tag comment '标签表'");
     }
 
     /**
@@ -34,6 +32,6 @@ class CreateImageTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('image');
+        Schema::dropIfExists('tag');
     }
 }
